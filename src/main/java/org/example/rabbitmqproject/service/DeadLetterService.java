@@ -19,8 +19,8 @@ public class DeadLetterService {
         System.out.println("Received message in DLQ: " + message);
 
         try {
-            if(true)
-                throw new RuntimeException("This is a text parking lot");
+//            if(true)
+//                throw new RuntimeException("This is a text parking lot");
             rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, RabbitMQConfig.QUEUE_NAME, message);
         } catch (Exception e) {
             System.err.println("Failed to process message from DLQ. Moving to Parking Lot: " + message);

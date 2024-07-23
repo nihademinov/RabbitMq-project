@@ -13,11 +13,13 @@ public class Receiver {
 
 
 
-    @RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)
+
+
+    @RabbitListener(queues = RabbitMQConfig.TOPIC_QUEUE_NAME)
     public void receiveMessage(String message) {
         try {
-            if(true)
-                throw new RuntimeException("This is a test");
+//            if(true)
+//                throw new RuntimeException("This is a test");
             System.out.println("Received message: " + message);
 
         } catch (Exception e) {

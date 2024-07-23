@@ -12,7 +12,7 @@ public class Sender {
     private RabbitTemplate rabbitTemplate;
 
     public void send(String message) {
-        rabbitTemplate.convertAndSend(RabbitMQConfig.QUEUE_NAME, message);
+        rabbitTemplate.convertAndSend(RabbitMQConfig.TOPIC_QUEUE_NAME, message);
         System.out.println("Sent: " + message);
     }
 }
