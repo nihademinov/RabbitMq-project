@@ -11,10 +11,6 @@ public class Receiver {
 
     private final DeadLetterService deadLetterService;
 
-
-
-
-
     @RabbitListener(queues = RabbitMQConfig.TOPIC_QUEUE_NAME)
     public void receiveMessage(String message) {
         try {
